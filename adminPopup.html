@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<head>
+    ADD ITEM
+    <br> <br> 
+<style>
+    .modal{
+        display:none;
+        position:fixed;
+        z-index:1;
+        padding-top: 100px;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        overflow:auto;
+        background-color: rgb(0,0,0);
+        background-color: rgb(0,0,0,0.4);
+    }
+    .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.close{
+    color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+     
+    .button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #4CAF50
+} 
+
+    .align-right{
+        text-align: right;
+        border:0;
+    }
+</style>
+    <script
+        type="text/javascript">
+   /* function fn1()
+{
+    var str=document.getElementById("name").value;
+    alert("Value is "+str);
+}
+var modal= document.getElementById("myModal");
+var btn=document.getElementById("myBtn");
+var span= document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+     
+</head>
+<body>
+    <button type="button" onclick="document.getElementById('myModal').style.display='block'"id="mybtn">ADD ITEM</button>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span onclick="document.getElementById('myModal').style.display='none'"class="close">&times;</span>
+            <p>some text</p>
+        
+<form action="/url" method="GET">
+    
+  <label for="ItemID">ItemID</label>      
+  <input type="text" id="ID" name="ID" placeholder="ID" required>
+  <br> <br>
+  <label for="Item Name">Item Name</label>
+  <input type="text" id="name" name="ItemName" placeholder="NAME" required>
+  <br> <br>
+  
+  <label for="Availability">Availability</label>
+  <select name="Availability" id="Availability">
+  <option value="from home">From Home</option>
+<option value="available in roorkee">Available In Roorkee</option>
+<option value="available in campus">Available In Campus</option>
+</select>
+
+
+</form>
+<div class="align-right">
+<button type="submit" class="button" onclick="alert('value is '+document.getElementById('name').value);document.getElementById('myModal').style.display='none'" >ADD</button>
+</div>
+</div>
+</div>
+
+</body>
