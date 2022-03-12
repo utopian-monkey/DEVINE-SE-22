@@ -30,7 +30,7 @@ function Modal({setOpenModal}) {
     <div id="myModal" className="modal">
     <div className="modal-content">
             
-            <button
+            <button className="cross"
                 onClick={() => {
                     setOpenModal(false);
                 }}

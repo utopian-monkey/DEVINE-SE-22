@@ -31,6 +31,7 @@ function App() {
     return (
         <div className="App">
             <input 
+                className="searchbar"
                 type="text" 
                 placeholder="Search"
                 onChange={(event) => {

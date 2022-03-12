@@ -12,20 +12,22 @@ display: inline-block;
 font-size: 16px;
 margin: 4px 2px;
 cursor: pointer;
-background-color: #4CAF50
+background-color: #4CAF50;
 } 
 
 .content-table {
-    text-align: center;
+    table-layout: fixed;
+    text-align: left;
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    min-width: 400px;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin-left: auto;
     margin-right: auto;
+    width: 1000px;
+    max-width: 1000px;
   }
 
   .content-table thead tr {
@@ -33,4 +35,18 @@ background-color: #4CAF50
     color: #ffffff;
     text-align: left;
     font-weight: bold;
+  }
+
+  .searchbar {
+      margin-top: 50px;
+      margin-right: 10px;
+      height: 30px;
+      width: 883px;
+  }
+
+  .openModalBtn {
+      margin-left: 00px;
+      margin-right: 5px;
+      width: 100px;
+      height: 35px;
   }

@@ -21,7 +21,6 @@ db.connect((err) => {
 app.get("/items", (req, res) => {
     console.log("Running...");
     db.query("SELECT * FROM Syntax.Items;", (err, result) => {
-      console.log(err,result);
       if (err) {
         console.log(err);
       } else {
