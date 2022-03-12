@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>XYZ</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class = "page">
+            <div class="layer">
+            <div class = "box">
+                <div class="button-box">
+                    <div id="btn">
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
+                     </div>
+                </div>
+                <form id="login" class="input-group">
+                    <input type="text" class ="input-field" placeholder="Enrollment Number" required>
+                    <input type="password" class ="input-field" placeholder="Password" required>
+                    <input type="checkbox" class="check-box"><span>Remember Password</span>
+                    <button type="submit" class="submit-btn">Log In</button>
+                </form>
+                <form id="signup" class="input-group">
+                    <input type="text" class ="input-field" placeholder="Enrollment Number" required>
+                    <input type="password" class ="input-field" placeholder="Set a Password" required>
+                    <input type="number" class ="input-field" placeholder="Contact Number" required>
+            
+                    <select name="Fresher/Senior" onChange={(event) => {setAvl(event.target.value);}} required>
+                        <option value="">Fresher/Senior</option>
+                        <option value="Fresher">Fresher</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                </form>
+            </div>
+
+        </div>
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("signup");
+            var z = document.getElementById("btn");
+
+            function signup(){
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px"
+
+            }
+            function login(){
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0px"
+             }
+
+
+        </script>
+    </body>
+</html>
