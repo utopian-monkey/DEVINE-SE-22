@@ -28,10 +28,21 @@ app.get("/items", (req, res) => {
       }
     });
   });
+  app.get("/seniors/:seniorid", (req, res) => {
+    const seniorid= req.params.seniorid;
+    console.log("Running...");
+    db.query("SELECT A.ItemID,A.Item_Name,A.Availability,B.Price FROM Items A, Deal B WHERE A.ItemID=B.ItemID AND B.UserID=?;", seniorid, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    });
+  });  
 
-  app.delete("/delete/:id", (req, res) => {
+  app.delete("/deletesen/:id", (req, res) => {
     const id = req.params.id;
-    db.query("DELETE FROM Items WHERE ItemID = ?;", id, (err, result) => {
+    db.query("DELETE FROM Deal WHERE ItemID = ?;", id, (err, result) => {
       if (err) {
         console.log(err);
       } else {

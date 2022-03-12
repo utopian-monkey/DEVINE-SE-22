@@ -10,9 +10,11 @@ function Modal({setOpenModal}) {
     const [avl, setAvl] = useState("");
 
     const addItem = () => {
+        
         if (id=="" || name=="" || avl=="" ){
             alert("Null entries are not accepted.")
         }
+        
         else {
             Axios.post("http://localhost:3001/additem", {
             id:id,
@@ -50,10 +52,12 @@ function Modal({setOpenModal}) {
 
             <label>Availability:</label>
             <select name="Availability" onChange={(event) => {setAvl(event.target.value);}} required>
+                <option value="">Select</option>
                 <option value="From Home">From Home</option>
                 <option value="Available in Roorkee">Available In Roorkee</option>
                 <option value="Available in Campus">Available In Campus</option>
             </select>
+            
 
         </form>
         <div className="align-right">
