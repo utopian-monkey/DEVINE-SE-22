@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Senior from './senior/senior';
+import Admin from './sell/sell';
 import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Senior />
+    <Admin />
   </React.StrictMode>,
   document.getElementById('root')
 );

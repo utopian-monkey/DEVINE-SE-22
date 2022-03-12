@@ -1,8 +1,8 @@
-import "./App.css";
+import "./sell.css";
 import React from "react";
 import { useEffect, useState } from "react";
 import Axios from "axios";
-import Modal from "./Components/Modal";
+import Modal from "../Components/modalSell";
 
 function App() {
     
@@ -18,15 +18,7 @@ function App() {
         })
     },[])
 
-    const deleteItem = (id) => {
-        Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
-          setItemList(
-            itemlist.filter((val) => {
-              return val.ItemID !== id;
-            })
-          );
-        });
-      };
+    
 
     return (
         <div className="App">
@@ -39,11 +31,7 @@ function App() {
                 }}
             />
             
-            <button type="button" className="openModalBtn" onClick={()=> {
-                setModalOpen(true);
-            }}    
-            >ADD ITEM</button>
-            {modalOpen && <Modal setOpenModal={setModalOpen} />}
+            
             
             <table className="content-table">
                 <thead>
@@ -71,7 +59,7 @@ function App() {
                                 <td>{val.ItemID}</td>
                                 <td>{val.Item_Name}</td>
                                 <td>{val.Availability}</td>
-                                <td><button onClick={()=> {deleteItem(val.ItemID)}}> Remove </button></td>
+                                <td><button class="openModalBtn"onClick={()=> {setModalOpen(true);}}> Sell </button>{modalOpen && <Modal setOpenModal={setModalOpen} />}</td>
                         </tr>
                         </tbody>
                         </table>

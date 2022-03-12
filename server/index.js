@@ -20,7 +20,7 @@ db.connect((err) => {
 
 app.get("/items", (req, res) => {
     console.log("Running...");
-    db.query("SELECT * FROM Syntax.Items;", (err, result) => {
+    db.query("SELECT * FROM Syntax.items;", (err, result) => {
       if (err) {
         console.log(err);
       } else {
@@ -40,6 +40,16 @@ app.get("/items", (req, res) => {
     });
   });  
 
+  app.delete("/delete/:id", (req, res) => {
+    const id = req.params.id;
+    db.query("DELETE FROM Deal WHERE ItemID = ?;", id, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    });
+  });
   app.delete("/deletesen/:id", (req, res) => {
     const id = req.params.id;
     db.query("DELETE FROM Deal WHERE ItemID = ?;", id, (err, result) => {
@@ -67,6 +77,27 @@ app.post('/additem',(req,res) => {
         }
 
     );
+});
+app.post('/adddeal',(req,res) => {
+  const userID = req.body.userID;
+  const itemID = req.body.itemID;
+  const price = req.body.price;
+  
+ 
+  
+  db.query(
+      'INSERT INTO deal(UserID,ItemID,Price) VALUES (?,?,?)',
+      
+      [userID,itemID,price],
+      (err,result) => {
+          if (err) {
+              console.log(err);
+          } else{
+              res.send("Deal added.")
+          }
+      }
+
+  );
 });
 app.listen(3001, () => {
     console.log("Server connected.");
