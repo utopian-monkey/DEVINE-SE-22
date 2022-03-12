@@ -41,6 +41,23 @@ app.get("/items", (req, res) => {
     });
   });
 
-  app.listen(3001, () => {
+app.post('/additem',(req,res) => {
+    const id = req.body.id;
+    const name = req.body.name;
+    const avl = req.body.avl;
+    db.query(
+        'INSERT INTO Items(ItemID,Item_Name,Availability) VALUES (?,?,?)',
+        [id,name,avl],
+        (err,result) => {
+            if (err) {
+                console.log(err);
+            } else{
+                res.send("Item added.")
+            }
+        }
+
+    );
+});
+app.listen(3001, () => {
     console.log("Server connected.");
-  });
+ });
